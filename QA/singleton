@@ -1,0 +1,71 @@
+1.列出所有单例模式写法
+
+public class Singleton {
+    private Singleton() {
+    }
+    private static final Singleton instance = new Singleton();
+
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+
+public class LazySingleton {
+    private LazySingleton() {
+
+    }
+    private static LazySingleton instance = null;
+
+    public static LazySingleton getInstance() {
+        if (instance == null)
+            return new LazySingleton();
+        return instance;
+    }
+}
+
+public class SynLazySingleton {
+    private SynLazySingleton {
+
+    }
+    private static SynLazySingleton = null;
+
+    public static synchronize SynLazySingleton getInstance() {
+        if (instance == null)
+            return new SynLazySingleton();
+        return instance;
+    }
+}
+
+public class DoubleCheckSingleton {
+    private DoubleCheckSingleton {
+
+    }
+    private static volatile DoubleCheckSingleton instance = null;
+
+    public static DoubleCheckSingleton getInstance() {
+        if (instance != null)
+            return instance;
+        synchronize (DoubleCheckSingleton.class) {
+            if (instance == null)
+                return new DoubleCheckSingleton();
+            return instance;
+        }
+    }
+}
+
+public class InnerClassSingleton {
+    private InnerClassSingleton {
+
+    }
+    private static class SingletonHolder {
+        private static final InnerClassSingleton instance = new InnerClassSingleton();
+    }
+
+    public static InnerClassSingleton getInstance() {
+        return SingletonHolder.instance;
+    }
+}
+
+public enum EnumSingleton {
+    INSTANCE
+}
