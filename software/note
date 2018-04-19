@@ -1,0 +1,4 @@
+oh-my-zsh安装：
+    wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+    相关的alias可以复制到~/.zshrc文件里，最后使用source更新一下文件即可： source ~/.zshrc
+
