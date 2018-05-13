@@ -1,6 +1,6 @@
 oh-my-zsh：
     安装：
-        wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh、
+        wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
     主题：
         使用 agnoster 主题
             安装字体
