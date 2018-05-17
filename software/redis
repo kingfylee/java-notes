@@ -1,0 +1,8 @@
+redis安装：
+    下载：wget http://download.redis.io/releases/redis-4.0.9.tar.gz
+    解压：tar -zxvf redis-4.0.9.tar.gz
+    make：cd redis-4.0.9
+          make
+          找不到gcc：yum -y install gcc-c++
+          找不到jemalloc.h make MALLOC=libc 或者 make distclean
+          最后：make
