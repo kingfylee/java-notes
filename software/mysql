@@ -1,0 +1,3 @@
+执行sql脚本文件:
+    mysql –uroot –p123456 -Dtest < /tmp/ss.sql
+    进入mysql内:source /tmp/ss.sql
