@@ -3,6 +3,9 @@ redis安装：
     解压：tar -zxvf redis-4.0.9.tar.gz
     make：cd redis-4.0.9
           make
-          找不到gcc：yum -y install gcc-c++
-          找不到jemalloc.h make MALLOC=libc 或者 make distclean
-          最后：make
+              找不到gcc：yum -y install gcc-c++
+              找不到jemalloc.h make MALLOC=libc 或者 make distclean
+              最后：make
+          make install
+    默认安装目录：/usr/local/bin
+    拷贝配置文件：cp redis.conf /etc
