@@ -1,5 +1,61 @@
-1.几种常见的算法
+常见排序算法及复杂度分析
 
-public class BubbleSort {
+// 插入排序
+public static void insertionSort(int[] arr){
+    for(int i=0; i<arr.length-1; i++ ) {
+        for( int j=i+1; j>0; j-- ) {
+            if(arr[j-1] <= arr[j] )
+                break;
+            int temp = arr[j];      //交换操作
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+        }
+    }
+}
 
+// 选择排序
+public static void selectionSort(int[] arr){
+    for(int i = 0; i < arr.length-1; i++){
+        int min = i;
+        for(int j = i+1; j < arr.length; j++){    //选出之后待排序中值最小的位置
+            if(arr[j] < arr[min]){
+                min = j;
+            }
+        }
+        if(min != i){
+            int temp = arr[min];      //交换操作
+            arr[min] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}
+
+// 冒泡排序
+public static void bubbleSort(int[] arr){
+    for (int i = arr.length; i > 0; i--) {          //外层循环移动游标
+        for(int j = 0; j < i && (j+1) < i; j++){    //内层循环遍历游标及之后(或之前)的元素
+            if(arr[j] > arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                System.out.println("Sorting: " + Arrays.toString(arr));
+            }
+        }
+    }
+}
+
+// 希尔排序
+public static void shellSort(int[] arr) {
+    int gap = 1, i, j, len = arr.length;
+    int temp;
+    while (gap < len / 3)
+        gap = gap * 3 + 1;      // <O(n^(3/2)) by Knuth,1973>: 1, 4, 13, 40, 121, ...
+    for (; gap > 0; gap /= 3) {
+        for (i = gap; i < len; i++) {
+            temp = arr[i];
+            for (j = i - gap; j >= 0 && arr[j] > temp; j -= gap)
+                arr[j + gap] = arr[j];
+            arr[j + gap] = temp;
+        }
+    }
 }
