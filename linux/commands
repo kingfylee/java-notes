@@ -1,12 +1,6 @@
 df:
-    -a, --all               包含所有的具有 0 Blocks 的文件系统
-    -h, --human-readable    使用人类可读的格式(预设值是不加这个选项的...)
-    -i, --inodes            列出 inode 资讯，不列出已使用 block
+    -h, --human-readable    使用人类可读的格式
     -l, --local             限制列出的文件结构
-    -P, --portability       使用 POSIX 输出格式
-    -t, --type=TYPE         限制列出文件系统的 TYPE
-    -T, --print-type        显示文件系统的形式
-    -x, --exclude-type=TYPE 限制列出文件系统不要显示 TYPE
 
 lsof:
     lsof dirname       查看哪些用户打开了这个目录
